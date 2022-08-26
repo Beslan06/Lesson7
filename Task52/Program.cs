@@ -10,7 +10,7 @@ Console.WriteLine("введите количество столбцов");
 int m = Convert.ToInt32(Console.ReadLine());
 
 int[,] numbers = new int[n, m];
-FillArrayRandomNumbers(numbers);
+FillmatrixRandomNumbers(numbers);
 
 
 for (int j = 0; j < numbers.GetLength(1); j++)
@@ -24,30 +24,30 @@ for (int j = 0; j < numbers.GetLength(1); j++)
     Console.Write(avarage + "; ");
 }
 Console.WriteLine();
-PrintArray(numbers);
+Printmatrix(numbers);
 
 
 
-void FillArrayRandomNumbers(int[,] array)
+void FillmatrixRandomNumbers(int[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(0, 10);
+            matrix[i, j] = new Random().Next(0, 10);
         }
     }
 }
 
-void PrintArray(int[,] array)
+void Printmatrix(int[,] matrix)
 {
 
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         Console.Write("[ ");
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");
+            Console.Write($"{matrix[i, j], 2} ");
         }
         Console.Write("]");
         Console.WriteLine("");

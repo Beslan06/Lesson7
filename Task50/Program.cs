@@ -25,25 +25,25 @@ else
 
 PrintArray(numbers);
 
-void FillArrayRandomNumbers(int[,] array)
+void FillArrayRandomNumbers(int[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
         {        
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                array [i,j] = new Random().Next(-100, 100)/10;
+                matrix [i,j] = new Random().Next(-100, 100)/10;
             }   
         }
 }
 
-void PrintArray(int[,] array)
+void PrintArray(int[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         Console.Write("[ ");
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(array[i,j] + " ");
+            Console.Write($"{matrix[i, j], 3} ");
         }   
         Console.Write("]");
         Console.WriteLine(""); 
